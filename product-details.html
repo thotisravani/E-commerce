@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(236, 127, 127);
+        }
+        .product-details {
+            max-width: 1600px;
+            margin: 20px auto;
+            padding: 20px;
+            color: #fff;
+            font-size: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, rgb(216, 104, 104), yellow);
+        }
+        .details-container {
+            display: flex;
+        }
+        .image-container {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .info-container {
+            flex: 2;
+        }
+        .price {
+            font-size: 24px;
+            color: #f1e7e7;
+            margin: 10px 0;
+        }
+        .quantity-selector {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #10a4fa;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .review-form {
+            margin-top: 20px;
+        }
+        .star-rating {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .star {
+            color: #ccc;
+        }
+        .star:hover,
+        .star.selected {
+            color: gold;
+        }
+        textarea {
+            width: 100%;
+            height: 60px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .color-selection {
+            margin-top: 40px;
+        }
+        .color-options {
+            display: flex;
+            gap: 10px;
+        }
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 70%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+        }
+        .color-option:hover {
+            border: 2px solid #000;
+        }
+        input[type="number"] {
+            width: 100px;
+            height: 40px;
+            font-size: 30px;
+        }
+        .size-button {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            background-color: #54a3f1; /* Default background color */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .size-button.selected {
+            background-color: #007bff; /* Background color when selected */
+            color: white; /* Text color when selected */
+            border-color: #0056b3; /* Border color when selected */
+        }
+        .size-button:hover {
+            background-color: #e2e6ea; /* Background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="product-details">
+        <h1>Product Details</h1>
+        <div class="details-container">
+            <div class="image-container">
+                <img src="https://i5.walmartimages.com/seo/Women-s-Plus-Size-Short-Shirt-Tops-with-Turn-Down-Sleeve-Fashionable-and-Casual-Button-Up-Blouse-for-Ladies_aa943440-b827-4816-b93d-63dd380963c4.650e888c2161d4608ba7e42441f752be.jpeg" alt="Stylish Blouse for Women" />
+            </div>
+            <div class="info-container">
+                <label for="variant-select">Select Size:</label>
+                <button onclick="selectSize('S')" class="size-button">S</button>
+                <button onclick="selectSize('M')" class="size-button">M</button>
+                <button onclick="selectSize('L')" class="size-button">L</button>
+                <button onclick="selectSize('XL')" class="size-button">XL</button>
+                <button onclick="selectSize('XXL')" class="size-button">XXL</button>
+                <div id="product-description">This is a stylish blouse for women.</div>
+                <div class="price" id="product-price">$49.99</div>
+                <div class="quantity-selector">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="10" />
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+                <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <div class="color-selection">
+                    <h4>Select Color:</h4>
+                    <div class="color-options">
+                        <div class="color-option" style="background-color: red;" onclick="selectColor('red')"></div>
+                        <div class="color-option" style="background-color: blue;" onclick="selectColor('blue')"></div>
+                        <div class="color-option" style="background-color: green;" onclick="selectColor('green')"></div>
+                        <div class="color-option" style="background-color: yellow;" onclick="selectColor('yellow')"></div>
+                    </div>
+                    <p id="selected-color">Selected Color: None</p>
+                </div>
+            </div>
+        </div>
+        <div id="reviews-section">
+            <h3>Reviews</h3>
+            <div id="reviews-container"></div>
+            <div class="review-form">
+                <h4>Leave a Review</h4>
+                <div class="star-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <textarea id="review-text" placeholder="Write your review here..."></textarea>
+                <button onclick="submitReview()">Submit Review</button>
+            </div>
+        </div>
+        <button onclick="window.location.href='products.html'">Back to Products</button>
+    </div>
+
+    <script>
+        const reviews = [
+            { rating: 5, comment: "Excellent product!" },
+            { rating: 4, comment: "Very good quality." },
+            { rating: 3, comment: "It's okay." },
+            { rating: 2, comment: "Not what I expected." },
+            { rating: 1, comment: "Terrible quality." }
+        ];
+
+        let selectedRating = 0;
+        let selectedColor = 'None';
+        let selectedSize = '';
+
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = star.getAttribute('data-value');
+                document.querySelectorAll('.star').forEach(s => {
+                    s.classList.remove('selected');
+                });
+                star.classList.add('selected');
+            });
+        });
+
+        function submitReview() {
+            const reviewText = document.getElementById('review-text').value;
+            if (!selectedRating || !reviewText) {
+                alert('Please provide a rating and a review.');
+                return;
+            }
+
+            const review = { rating: selectedRating, comment: reviewText };
+            reviews.push(review);
+            updateReviewsDisplay();
+            clearReviewForm();
+        }
+
+        function updateReviewsDisplay() {
+            const reviewsContainer = document.getElementById('reviews-container');
+            reviewsContainer.innerHTML = ''; // Clear existing reviews
+            reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.innerText = `${review.rating} Stars: ${review.comment}`;
+                reviewsContainer.appendChild(reviewElement);
+            });
+        }
+
+        function selectColor(color) {
+            selectedColor = color;
+            document.getElementById('selected-color').innerText = `Selected Color: ${color}`;
+        }
+
+        function changeQuantity(amount) {
+            const quantityInput = document.getElementById('quantity');
+            let currentQuantity = parseInt(quantityInput.value);
+
+            if (!isNaN(currentQuantity)) {
+                currentQuantity += amount;
+                if (currentQuantity < 1) currentQuantity = 1;
+                if (currentQuantity > 10) currentQuantity = 10;
+                quantityInput.value = currentQuantity;
+            }
+        }
+
+        function selectSize(size) {
+            selectedSize = size;
+
+            // Remove 'selected' class from all size buttons
+            document.querySelectorAll('.size-button').forEach(button => {
+                button.classList.remove('selected');
+            });
+
+            // Add 'selected' class to the clicked button
+            const selectedButton = [...document.querySelectorAll('.size-button')].find(button => button.innerText === size);
+            if (selectedButton) {
+                selectedButton.classList.add('selected');
+            }
+        }
+
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value; // Get the quantity
+            const color = selectedColor === 'None' ? 'Default Color' : selectedColor; // Get the selected color
+
+            if (!selectedSize) {
+                alert('Please select a size.'); // Alert if no size is selected
+                return;
+            }
+
+            alert(`Added ${quantity} of size ${selectedSize} and color ${color} to cart.`);
+        }
+
+        function clearReviewForm() {
+            document.getElementById('review-text').value = '';
+            selectedRating = 0; // Reset selected rating
+            document.querySelectorAll('.star').forEach(s => {
+                s.classList.remove('selected');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Sofia&display=swap" rel="stylesheet">
+    <title>Vastra heaven</title>
+    <link rel="stylesheet" href="index.css"> 
+</head>
+<body>
+        <video autoplay muted loop class="background-video">
+            <source src="video2.webm" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    <header>
+        <a href="#"><img class="logo" src="img3.png" alt="Logo"></a>
+        <ul class="navbar">
+            <li><a href="#Home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+    <section>
+        <div class="container">
+            <img src="fashion.png" alt="Woman" class="transition-image" id="image">
+            <p class="text">"New arrivals! Shop our latest collection and elevate your style game! #Vastra Heaven #WomenFashion"</p>
+            <button class="explore-button">Explore Now</button>
+        </div>
+    </section>
+    <main>
+        <h1>Elevate your style, elevate your life.</h1>
+        <div class="grid-container">
+            <div class="product-card" onclick="window.location.href='product-details.html';">
+                <img src="https://i5.walmartimages.com/seo/Women-s-Plus-Size-Short-Shirt-Tops-with-Turn-Down-Sleeve-Fashionable-and-Casual-Button-Up-Blouse-for-Ladies_aa943440-b827-4816-b93d-63dd380963c4.650e888c2161d4608ba7e42441f752be.jpeg" class="product-image" alt="Product" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart" onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/41Nu7bqs3vL._AC_.jpg" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart" onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTs1t-cpb7wqJ9CA6OrisdcdDpbEug1cKpl5HuHPU15LtW_FqCegOiAW98l1lv1AUFonviT8_V1k5bGikDHy2giasNkskH2Sd2N3ySapMs&usqp=CAE" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart" onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTUdCQ3v4fq9vJ_aKvdYHG-6fpIGf1S8zF2_focCkKzDVyuQJr8dvg0Jsnco_qetIGG6jCi_SSAr3pOf5hdRxSSGfXxQNfq87xuCiDlod4&usqp=CAE"class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSIquMEH6AlAUf1SLpAXm5s0DlaapRyI2q7qSgdqzC1c5FY09M620P6mfkDEg3Lxh0M5HdAkpQDbqfMMUPHWBdVgbIE35R154cavVk8b-JI&usqp=CAE" class="product-image"alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTfbyrzqhlnrUw_EKzmiqxTsQ1kmCRTazd8EBRUPN4goTjTTbREYWFs69M1fdXoCU9Kvv5vwAbXabHBYhfgmtWd6xSRRf0xmWGrRuE8HNU&usqp=CAE" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQOBReYqTwXSPd-bXSzKFUXRmoIUqg4ZCsByLrn-qmHHSDo-0nQa6CkmNW5ofCA2F5w4LduEgDqr282C1ROEEJ8QQ78n8b9qjPCpOrigSz8MTjTngBH2XyoXg&usqp=CAE" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ4MRmp-xPwbctmvdSByynzHfAQM0rEKkytwucI-pAAbZv6iR-eiXbBXfe4wMaAaBK4Gww1tSmqBFrAsc-E1QP5mMWkVCX5EOL1HEZw-Q-M&usqp=CAE" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/318465901/7n8fp_400.webp" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/294657458/w3pbn_400.webp" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/370517576/l5tzv_512.webp" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/342777626/mahuo_512.webp" class="product-image" alt="Dress" />
+                <div class="price">Buy Now: $49.99</div>
+                <button class="like">Like</button>
+                <button class="add-to-cart"onclick="addToCart(event)">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <button class="btn">See More</button>
+    </main>
+    <div class="offer">
+        <p class="off-p">Make this Dussehra special! Shop our kids' clothing collection starting at ₹299! #DussehraOffers #KidsWear</p>
+        <div>
+            <img src="https://i.pinimg.com/736x/20/8f/9d/208f9dae9134960c96065ecfb1ae2fea.jpg" class="zara" alt="zara">
+        </div>
+    </div>
+    <footer class="footer">
+        <video class="footer-video" src="video1.webm" autoplay loop muted></video>
+        <div class="footer-content">
+            <h1 class="h1">Get in Touch</h1>
+            <ul class="social-icons">
+                <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript" src="index..js"></script>   
+</body>
+</html>
